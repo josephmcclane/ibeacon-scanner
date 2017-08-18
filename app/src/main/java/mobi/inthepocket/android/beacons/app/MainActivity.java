@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -31,11 +32,12 @@ public class MainActivity extends AppCompatActivity implements IBeaconScanner.Ca
     RecyclerView recyclerView;
     @BindView(R.id.layout_state)
     LinearLayout layoutState;
+    public static final String TAG ="dev" ;
 
     private BeaconAdapter beaconAdapter;
     private AbstractStateView stateView;
     private List<Beacon> uuidsList = new ArrayList<>();
-    private String doorBeacon = "886514BB-867E-49F1-835E-263A3F890C87:41703:20525";
+    private String doorBeacon = "886514BB-867E-49F1-835E-263A3F890C87"; //:41703:20525
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -77,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements IBeaconScanner.Ca
             uuidsList.add(beacon);
             this.beaconAdapter.updateBeacon(beacon, rssi);
             this.updateView(this.beaconAdapter.getItemCount(), null);
+            Log.d(TAG, "beacon uuid: "+beacon.getUUID().toString());
             if(beacon.getUUID().toString().equalsIgnoreCase(doorBeacon)){
                 Toast.makeText(this, "You are near the door", Toast.LENGTH_SHORT).show();
             }
