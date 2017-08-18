@@ -33,7 +33,13 @@ public class BeaconViewHolder extends RecyclerView.ViewHolder
     public void bindData(final Beacon beacon, int rssi)
     {
         this.textViewBeaconUUID.setText(beacon.getUUID().toString());
-        this.textViewRssi.setText(String.valueOf(rssi));
+        this.textViewRssi.setText("Distance: "+getDistance(rssi)+" meter");
         this.progressBarRssi.setProgress(rssi*-1+127);
+    }
+
+    private double getDistance(double rssi) {
+        // TODO Auto-generated method stub
+        return Math.pow(10.0,((rssi-(-60.0))/-25.0));
+
     }
 }

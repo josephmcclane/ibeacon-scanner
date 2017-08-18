@@ -2,36 +2,22 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "26.0.1   "
+    buildToolsVersion "25.0.0"
 
     defaultConfig {
         applicationId "be.createweb.beaconscanner"
-        minSdkVersion 19
+        minSdkVersion 11
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
     }
 
-  /*  signingConfigs {
-        release {
-            storeFile file("ibeaconscannerapp.jks")
-            storePassword ibs_store_password
-            keyAlias ibs_key_alias
-            keyPassword ibs_key_password
-        }
-    }*/
 
     buildTypes {
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-
-     /*   release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-        }*/
     }
 
     lintOptions {
@@ -41,8 +27,8 @@ android {
 
 dependencies {
     compile project(':ibeaconscanner') // library to scan for iBeacons
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.android.support:design:25.0.0'
     compile 'io.reactivex:rxjava:1.2.0' // rxjava
     compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar' // library to handle location permission
     compile 'com.facebook.stetho:stetho:1.4.1' // stetho to easily see our database

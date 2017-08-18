@@ -10,7 +10,8 @@
         android:id="@+id/textview_UUID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="4de4a450-5357-41a5-aa96-36fe0637c4c3"/>
+        tools:text="4de4a450-5357-41a5-aa96-36fe0637c4c3"
+        android:textAllCaps="true"/>
 
     <TextView
         android:id="@+id/textview_rssi"
@@ -18,7 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/padding_large"
         android:layout_alignParentRight="true"
-        tools:text="-81"/>
+        tools:text="-81"
+        android:layout_below="@+id/textview_UUID"/>
 
     <ProgressBar
         android:id="@+id/progressbar_rssi"
@@ -27,7 +29,7 @@
         android:layout_height="wrap_content"
         android:indeterminate="false"
         android:max="254"
-        android:layout_below="@id/textview_UUID"
+        android:layout_below="@id/textview_rssi"
         android:layout_marginTop="@dimen/padding_medium"
         tools:progress="208"/>
 
