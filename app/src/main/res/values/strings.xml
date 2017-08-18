@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">iBeacon Scanner</string>
+
+    <!-- Main Activity -->
+
+    <!-- States -->
+    <string name="state_scanning">No iBeacons found yet, scanning for more!</string>
+    <string name="state_general_error">Something went wrong.</string>
+    <string name="state_no_permission">Location permission lacking.</string>
+    <string name="state_no_bluetooth">There is no bluetooth on this device.</string>
+    <string name="state_bluetooth_off">Bluetooth is not on.</string>
+    <string name="state_location_off">Location is not on.</string>
+    <string name="button_retry">Retry!</string>
+</resources>
